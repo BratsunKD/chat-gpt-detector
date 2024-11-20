@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  predict_service:
+    build:
+      context: .
+      dockerfile: src/predict_service/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - BASE_MODEL_NAME=sagteam/xlm-roberta-large-sag
+      - LORA_WEGHTS_PATH=models/lora_weights/betterweights_v1
+    volumes:
+      - ./models:/app/models
