@@ -1,4 +1,4 @@
-# chat-gpt-detector
+# chat-gpt-detector-app
 
 Сервис для определения сгенерированого chat gpt текста
 
