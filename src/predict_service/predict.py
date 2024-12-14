@@ -41,5 +41,6 @@ def process_text(model, tokenizer, text, max_length=512):
         outputs = model(**tokens)
 
     logits = outputs.logits
-    predictions = torch.argmax(logits, dim=-1).item()
+    probabilities = F.softmax(logits, dim=-1)
+    predictions = probabilities[0, 1].item()
     return predictions
