@@ -3,6 +3,7 @@ from transformers import AutoTokenizer, XLMRobertaForSequenceClassification
 from peft import PeftModel, PeftConfig
 from loguru import logger
 from time import time
+import torch.nn.functional as F
 
 
 def initialize_model_with_lora(base_model_name, lora_weights_path):
